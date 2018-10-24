@@ -153,7 +153,7 @@ render() {
                   value={signUpPassword}
                   onChange={onTextboxChangeSignUpPassword}
                   /><br />
-                  <button onClick={this.onSignUp}Sign Up</button>
+                  <button onClick={this.onSignUp}>Sign Up</button>
                   </div>
 
 
