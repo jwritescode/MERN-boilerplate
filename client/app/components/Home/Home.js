@@ -211,14 +211,14 @@ class Home extends Component {
 
     if (!token) {
       return (
-        <div>
-          <div>
+        <FlexView vAlignContent='center' hAlignContent='center'>
+          <FlexView vAlignContent='center' hAlignContent='center'>
             {
               (signInError) ? (
                 <p>{signInError}</p>
               ) : (null)
             }
-
+</FlexView>
             <FlexView vAlignContent='center' hAlignContent='center'>Sign In</FlexView><br />
           <FlexView vAlignContent='center' hAlignContent='center'><input
               type="email"
@@ -235,15 +235,15 @@ class Home extends Component {
             /></FlexView>
 <br />
             <FlexView vAlignContent='center' hAlignContent='center'><button onClick={this.onSignIn}>Sign In</button></FlexView>
-         </div>
+         </FlexView>
           <br />
           <br />
-          <div>
+          <FlexView vAlignContent='center' hAlignContent='center'>
             {
               (signUpError) ? (
                 <p>{signUpError}</p>
               ) : (null)
-            }
+            }</FlexView>
             <FlexView vAlignContent='center' hAlignContent='center'>Sign Up</FlexView><br />
             <FlexView vAlignContent='center' hAlignContent='center'><input
               type="email"
@@ -258,9 +258,9 @@ class Home extends Component {
               onChange={this.onTextboxChangeSignUpPassword}
             /></FlexView><br />
             <FlexView vAlignContent='center' hAlignContent='center'><button onClick={this.onSignUp}>Sign Up</button></FlexView>
-          </div>
+          </FlexView>
 
-        </div>
+        </FlexView>
       );
     }
 
