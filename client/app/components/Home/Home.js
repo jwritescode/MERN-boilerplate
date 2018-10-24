@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
+import FlexView from 'react-flexview';
 
 import {
   getFromStorage,
@@ -217,7 +218,7 @@ class Home extends Component {
                 <p>{signInError}</p>
               ) : (null)
             }
-            <p>Sign In</p>
+            <p><FlexView vAlignContent='center' hAlignContent='center'>Sign In</p></FlexView>
             <input
               type="email"
               placeholder="Email"
