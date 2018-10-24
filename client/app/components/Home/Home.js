@@ -46,7 +46,7 @@ onSignUp() {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      email: signUpEmail
+      email: signUpEmail,
       password: signUpPassword,
     }),
   })
