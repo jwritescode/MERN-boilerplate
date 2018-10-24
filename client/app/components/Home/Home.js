@@ -211,7 +211,7 @@ class Home extends Component {
 
     if (!token) {
       return (
-        <div>
+        <FlexView>
           <FlexView column="true">
             {
               (signInError) ? (
@@ -260,7 +260,7 @@ class Home extends Component {
             <FlexView vAlignContent='center' hAlignContent='center'><button onClick={this.onSignUp}>Sign Up</button></FlexView>
           </FlexView>
 
-        </div>
+        </FlexView>
       );
     }
 
