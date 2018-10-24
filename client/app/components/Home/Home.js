@@ -219,7 +219,7 @@ class Home extends Component {
               ) : (null)
             }
 
-            <FlexView vAlignContent='center' hAlignContent='center'>Sign In</FlexView>
+            <FlexView vAlignContent='center' hAlignContent='center'>Sign In</FlexView><br />
           <FlexView vAlignContent='center' hAlignContent='center'><input
               type="email"
               placeholder="Email"
@@ -233,7 +233,7 @@ class Home extends Component {
               value={signInPassword}
               onChange={this.onTextboxChangeSignInPassword}
             /></FlexView>
-            
+
             <FlexView vAlignContent='center' hAlignContent='center'><button onClick={this.onSignIn}>Sign In</button></FlexView>
          </div>
           <br />
@@ -244,20 +244,20 @@ class Home extends Component {
                 <p>{signUpError}</p>
               ) : (null)
             }
-            <p>Sign Up</p>
-            <input
+            <FlexView vAlignContent='center' hAlignContent='center'>Sign Up</FlexView><br />
+            <FlexView vAlignContent='center' hAlignContent='center'><input
               type="email"
               placeholder="Email"
               value={signUpEmail}
               onChange={this.onTextboxChangeSignUpEmail}
-            /><br />
-            <input
+            /></FlexView>
+            <FlexView vAlignContent='center' hAlignContent='center'><input
               type="password"
               placeholder="Password"
               value={signUpPassword}
               onChange={this.onTextboxChangeSignUpPassword}
-            /><br />
-            <button onClick={this.onSignUp}>Sign Up</button>
+            /></FlexView><br />
+            <FlexView vAlignContent='center' hAlignContent='center'><button onClick={this.onSignUp}>Sign Up</button></FlexView>
           </div>
 
         </div>
