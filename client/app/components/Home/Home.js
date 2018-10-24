@@ -124,46 +124,50 @@ render() {
           }
           <p>Sign In</p>
           <input
+            type="email"
+            placeholder="Email"
+            value={signInEmail}
+            onChange={this.onTextboxChangeSignInEmail}
+          />
+          <br />
+          <input
             type="password"
             placeholder="Password"
             value={signInPassword}
             onChange={this.onTextboxChangeSignInPassword}
-            />
-            <br />
-            <button>Sign In</button>
-            </div>
-            <br />
-            <br />
-            <div>
-              {
-                (signUpError) ? (
-                  <p>{signUpError}</p>
-                ) : (null)
-              }
-              <p>Sign Up</p>
-              <input
-                type="email"
-                placeholder="Email"
-                value={signUpEmail}
-                onChange={this.onTextboxChangeSignUpEmail}
-                /><br />
-                <input
-                  type="password"
-                  placeholder="Password"
-                  value={signUpPassword}
-                  onChange={onTextboxChangeSignUpPassword}
-                  /><br />
-                  <button onClick={this.onSignUp}>Sign Up</button>
-                  </div>
-
-
-                  </div>
-                );
+          />
+          <br />
+          <button>Sign In</button>
+        </div>
+        <br />
+        <br />
+        <div>
+          {
+            (signUpError) ? (
+              <p>{signUpError}</p>
+            ) : (null)
+          }
+          <p>Sign Up</p>
+          <input
+            type="email"
+            placeholder="Email"
+            value={signUpEmail}
+            onChange={this.onTextboxChangeSignUpEmail}
+          /><br />
+          <input
+            type="password"
+            placeholder="Password"
+            value={signUpPassword}
+            onChange={this.onTextboxChangeSignUpPassword}
+          /><br />
+          <button onClick={this.onSignUp}>Sign Up</button>
+        </div>
+     </div>
+    );
   }
-
   return (
     <div>
-    <p>Signed in<p>
+      <p>Signed in</p>
     </div>
   );
 }
