@@ -172,7 +172,7 @@ onSignIn() {
 
 
 onTextboxChangeSignInEmail(event) {
-  this.setStat({
+  this.setState({
     signInEmail: event.target.value,
   });
 }
