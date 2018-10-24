@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
+import {
+  setInStorage,
+  getFromStorage,
+} from '../../utils/storage';
 
 class Home extends Component {
   constructor(props) {
@@ -21,15 +25,64 @@ this.onTextboxChangeSignInPassword = this.onTextboxChangeSignInPassword.bind(thi
 this.onTextboxChangeSignUpEmail = this.onTextboxChangeSignUpEmail.bind(this);
 this.onTextboxChangeSignUpPassword = this.onTextboxChangeSignUpPassword.bind(this);
 this.onSignUp = this.onSignUp.bind(this);
-//this.onSignIn = this.onSignIn.bind(this);
+this.onSignIn = this.onSignIn.bind(this);
+this.logout = this.logout.bind(this);
 }
 
 //Functions for the sign up/sign in form
 componentDidMount() {
-  this.setState({
-    isLoading: false
+  const obj = getFromStorage('the_main_app');
+  if (obj && obj.token) {
+    const { token } = obj;
+    //verify token
+    fetch('/api/account/verify?token=' + token)
+    .then(res => res.json())
+    .then(json => {
+      if (json.success) {
+      this.setState({
+        token,
+        isLoading: false
+      });
+    } else {
+      this.setState({
+        isLoading: false,
   });
 }
+});
+} else {
+  this.setState({
+    isLoading: false,
+  });
+}
+}
+logout() {
+    this.setState({
+      isLoading: true,
+    });
+    const obj = getFromStorage('the_main_app');
+    if (obj && obj.token) {
+      const { token } = obj;
+      // Verify token
+      fetch('/api/account/logout?token=' + token)
+        .then(res => res.json())
+        .then(json => {
+          if (json.success) {
+            this.setState({
+              token: '',
+              isLoading: false
+            });
+          } else {
+            this.setState({
+              isLoading: false,
+            });
+          }
+        });
+    } else {
+      this.setState({
+        isLoading: false,
+      });
+    }
+  }
 onSignUp() {
   // Grab setState
   const {
@@ -73,6 +126,49 @@ onSignUp() {
 /*In the function above, it grabs the values stored in state. Changes the UI
  to represent loading, and creates a API request to our endpoint.
  When the response comes back, it informs the user what happened.*/
+onSignIn() {
+  // Grab state
+  const {
+    signInEmail,
+    signInPassword,
+  } = this.state;
+
+  this.setState({
+    isLoading: true,
+  });
+
+  // post request to backend
+  fetch('/api/account/signin', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON stringify({
+      email: signInEmail,
+      password: signInPassword,
+    }),
+  })
+  .then(res => res.json())
+  .then(json => {
+    console.log('json', json);
+    if (json.success) {
+      setInStorage('the_main_app', { token: json.token });
+      this.setState({
+        signInError: json.message,
+        isLoading: false,
+        signInPassword: '',
+        signInEmail: '',
+        token: json.token,
+      });
+    } else {
+      this.setState({
+        signInError: json.message,
+        isLoading: false,
+      });
+    }
+  });
+}
+
 
 onTextboxChangeSignInEmail(event) {
   this.setStat({
@@ -138,7 +234,7 @@ render() {
             onChange={this.onTextboxChangeSignInPassword}
           />
           <br />
-          <button>Sign In</button>
+          <button onClick={this.onSignIn}>Sign In</button>
         </div>
         <br />
         <br />
@@ -168,7 +264,8 @@ render() {
   }
   return (
     <div>
-      <p>Signed in</p>
+      <p>Account</p>
+      <button onClick={this.logout}>Logout</button>
     </div>
   );
 }
