@@ -70,7 +70,7 @@ logout() {
           if (json.success) {
             this.setState({
               token: '',
-              isLoading: false
+              isLoading: false,
             });
           } else {
             this.setState({
