@@ -64,4 +64,4 @@ User.find({
 });
 
 }); // end of the sign up endpoint
-};
+}
