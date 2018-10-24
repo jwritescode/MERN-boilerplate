@@ -31,7 +31,7 @@ email = email.trim();
 User.find({
   email: email
 }, (err, users) => {
-  if (err {
+  if (err) {
     console.log('err 2:', err);
     return res.send({
       success: false,
