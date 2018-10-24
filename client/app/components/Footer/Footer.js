@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => (
   <footer>
     <hr />
-    <p>Footer</p>
+    <p>johnwritescode 2018 - learning react, flexbox, mongodb, express and a handful of other technologies.</p>
   </footer>
 );
 
