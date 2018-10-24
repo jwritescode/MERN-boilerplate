@@ -219,20 +219,20 @@ class Home extends Component {
               ) : (null)
             }
 
-            <FlexView vAlignContent='center' hAlignContent='left'>Have an Account?&nbsp;</FlexView><br />
+            <FlexView vAlignContent='center' hAlignContent='left'>Log In&nbsp;</FlexView><br />
           <FlexView vAlignContent='center' hAlignContent='center'><input
               type="email"
               placeholder="Email"
               value={signInEmail}
               onChange={this.onTextboxChangeSignInEmail}
-            /></FlexView>
+            />&nbsp;</FlexView>
 
             <FlexView vAlignContent='center' hAlignContent='center'><input
               type="password"
               placeholder="Password"
               value={signInPassword}
               onChange={this.onTextboxChangeSignInPassword}
-            /></FlexView>
+            />&nbsp;</FlexView>
 <br />
             <FlexView vAlignContent='center' hAlignContent='right'><button onClick={this.onSignIn}>Sign In</button></FlexView><br />
             <br />
@@ -244,19 +244,19 @@ class Home extends Component {
                 <p>{signUpError}</p>
               ) : (null)
             }
-            <FlexView vAlignContent='center' hAlignContent='left'>Need an Account? </FlexView><br />
+            <FlexView vAlignContent='center' hAlignContent='left'>Register&nbsp;</FlexView><br />
             <FlexView vAlignContent='center' hAlignContent='center'><input
               type="email"
               placeholder="Email"
               value={signUpEmail}
               onChange={this.onTextboxChangeSignUpEmail}
-            /></FlexView>
+            />&nbsp;</FlexView>
             <FlexView vAlignContent='center' hAlignContent='center'><input
               type="password"
               placeholder="Password"
               value={signUpPassword}
               onChange={this.onTextboxChangeSignUpPassword}
-            /></FlexView><br />
+            />&nbsp;</FlexView><br />
             <FlexView vAlignContent='center' hAlignContent='right'><button onClick={this.onSignUp}>Sign Up</button></FlexView>
           </FlexView>
 
