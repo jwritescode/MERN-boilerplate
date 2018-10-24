@@ -219,7 +219,7 @@ class Home extends Component {
               ) : (null)
             }
 
-            <FlexView vAlignContent='center' hAlignContent='left'>Sign In</FlexView><br />
+            <FlexView vAlignContent='center' hAlignContent='left'>Have an Account? </FlexView><br />
           <FlexView vAlignContent='center' hAlignContent='left'><input
               type="email"
               placeholder="Email"
@@ -244,7 +244,7 @@ class Home extends Component {
                 <p>{signUpError}</p>
               ) : (null)
             }
-            <FlexView vAlignContent='center' hAlignContent='right'>Sign Up</FlexView><br />
+            <FlexView vAlignContent='center' hAlignContent='right'>Need an Account? </FlexView><br />
             <FlexView vAlignContent='center' hAlignContent='right'><input
               type="email"
               placeholder="Email"
