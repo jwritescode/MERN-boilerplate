@@ -236,7 +236,7 @@ class Home extends Component {
 <br />
             <FlexView><button onClick={this.onSignIn}>Sign In</button></FlexView>
 
-         </FlexView>&nbsp;
+         </FlexView>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <FlexView column='true' hAlignContent='left'>
             {
               (signUpError) ? (
