@@ -70,7 +70,7 @@ User.find({
 
 app.get('/api/account/logout', (req, res, next) => {
   // get the token
-  const { query ] = req;
+  const { query } = req;
   const { token } = query;
 //?token=test
 
