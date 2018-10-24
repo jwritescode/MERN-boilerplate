@@ -232,10 +232,10 @@ class Home extends Component {
               placeholder="Password"
               value={signInPassword}
               onChange={this.onTextboxChangeSignInPassword}
-            />&nbsp;</FlexView>
+            /></FlexView>
 <br />
-            <FlexView><button onClick={this.onSignIn}>Sign In</button></FlexView><br />
-            <br />
+            <FlexView><button onClick={this.onSignIn}>Sign In</button></FlexView>
+
          </FlexView>
           <FlexView column='true' hAlignContent='left'>
             {
@@ -255,11 +255,11 @@ class Home extends Component {
               placeholder="Password"
               value={signUpPassword}
               onChange={this.onTextboxChangeSignUpPassword}
-            />&nbsp;</FlexView><br />
+            /></FlexView><br />
             <FlexView><button onClick={this.onSignUp}>Sign Up</button></FlexView>
           </FlexView>
 </FlexView>
-  
+
       );
     }
 
