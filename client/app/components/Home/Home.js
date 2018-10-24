@@ -125,11 +125,11 @@ render() {
           }
           <p>Sign In</p>
           <input
-            type="email"
-            placeholder="Email"
-            value={signInEmail}
-            onChange={this.onTextboxChangeSignInEmail}
-          />
+                type="email"
+                placeholder="Email"
+                value={signInEmail}
+                onChange={this.onTextboxChangeSignInEmail}
+              />
           <br />
           <input
             type="password"
