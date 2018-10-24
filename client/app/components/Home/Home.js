@@ -212,14 +212,14 @@ class Home extends Component {
     if (!token) {
       return (
         <FlexView hAlignContent='center' vAlignContent='center'>
-          <FlexView column='true' hAlignContent='left'  style={{ backgroundColor: '#D1236D' }}>
+          <FlexView column='true' hAlignContent='center'  style={{ backgroundColor: '#D1236D' }}>
             {
               (signInError) ? (
                 <p>{signInError}</p>
               ) : (null)
             }
 
-            <FlexView hAlignContent='center'>Log In</FlexView><br />
+            <FlexView>Log In</FlexView><br />
           <FlexView><input
               type="email"
               placeholder="Email"
@@ -234,19 +234,19 @@ class Home extends Component {
               onChange={this.onTextboxChangeSignInPassword}
             /></FlexView>
 <br />
-            <FlexView hAlignContent='center'><button onClick={this.onSignIn}>Sign In</button></FlexView>
+            <FlexView><button onClick={this.onSignIn}>Sign In</button></FlexView>
 
          </FlexView>
          <FlexView>
   <FlexView hAlignContent='center' basis={50} style={{ height: 50 }}/>Welcome to johnwritescode!
 </FlexView>
-          <FlexView column='true' hAlignContent='left' style={{ backgroundColor: '#1A91EB' }}>
+          <FlexView column='true' hAlignContent='center' style={{ backgroundColor: '#1A91EB' }}>
             {
               (signUpError) ? (
                 <p>{signUpError}</p>
               ) : (null)
             }
-            <FlexView hAlignContent='center'>Register</FlexView><br />
+            <FlexView>Register</FlexView><br />
             <FlexView><input
               type="email"
               placeholder="Email"
@@ -259,7 +259,7 @@ class Home extends Component {
               value={signUpPassword}
               onChange={this.onTextboxChangeSignUpPassword}
             /></FlexView><br />
-            <FlexView hAlignContent='center'><button onClick={this.onSignUp}>Sign Up</button></FlexView>
+            <FlexView><button onClick={this.onSignUp}>Sign Up</button></FlexView>
           </FlexView>
 </FlexView>
 
