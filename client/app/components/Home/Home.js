@@ -212,7 +212,7 @@ class Home extends Component {
     if (!token) {
       return (
         <div>
-          <div>
+          <FlexView column="true">
             {
               (signInError) ? (
                 <p>{signInError}</p>
@@ -234,11 +234,11 @@ class Home extends Component {
               onChange={this.onTextboxChangeSignInPassword}
             /></FlexView>
 <br />
-            <FlexView vAlignContent='center' hAlignContent='center'><button onClick={this.onSignIn}>Sign In</button></FlexView>
-         </div>
-          <br />
-          <br />
-          <div>
+            <FlexView vAlignContent='center' hAlignContent='center'><button onClick={this.onSignIn}>Sign In</button></FlexView><br />
+            <br />
+         </FlexView>
+
+          <FlexView column="true">
             {
               (signUpError) ? (
                 <p>{signUpError}</p>
@@ -258,7 +258,7 @@ class Home extends Component {
               onChange={this.onTextboxChangeSignUpPassword}
             /></FlexView><br />
             <FlexView vAlignContent='center' hAlignContent='center'><button onClick={this.onSignUp}>Sign Up</button></FlexView>
-          </div>
+          </FlexView>
 
         </div>
       );
