@@ -10,7 +10,7 @@ class Home extends Component {
     super(props);
 
 this.state = {
-  isLoading: true,
+  isLoading: false,
   token: '',
   signUpError: '',
   signInError: '',
