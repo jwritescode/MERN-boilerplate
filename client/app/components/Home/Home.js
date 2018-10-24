@@ -220,38 +220,38 @@ class Home extends Component {
             }
 
             <FlexView vAlignContent='center' hAlignContent='left'>Have an Account? </FlexView><br />
-          <FlexView vAlignContent='center' hAlignContent='left'><input
+          <FlexView vAlignContent='center' hAlignContent='center'><input
               type="email"
               placeholder="Email"
               value={signInEmail}
               onChange={this.onTextboxChangeSignInEmail}
             /></FlexView>
 
-            <FlexView vAlignContent='center' hAlignContent='left'><input
+            <FlexView vAlignContent='center' hAlignContent='center'><input
               type="password"
               placeholder="Password"
               value={signInPassword}
               onChange={this.onTextboxChangeSignInPassword}
             /></FlexView>
 <br />
-            <FlexView vAlignContent='center' hAlignContent='left'><button onClick={this.onSignIn}>Sign In</button></FlexView><br />
+            <FlexView vAlignContent='center' hAlignContent='right'><button onClick={this.onSignIn}>Sign In</button></FlexView><br />
             <br />
          </FlexView>
 
-          <FlexView hAlignContent='right' >
+          <FlexView hAlignContent='left' >
             {
               (signUpError) ? (
                 <p>{signUpError}</p>
               ) : (null)
             }
-            <FlexView vAlignContent='center' hAlignContent='right'>Need an Account? </FlexView><br />
-            <FlexView vAlignContent='center' hAlignContent='right'><input
+            <FlexView vAlignContent='center' hAlignContent='left'>Need an Account? </FlexView><br />
+            <FlexView vAlignContent='center' hAlignContent='center'><input
               type="email"
               placeholder="Email"
               value={signUpEmail}
               onChange={this.onTextboxChangeSignUpEmail}
             /></FlexView>
-            <FlexView vAlignContent='center' hAlignContent='right'><input
+            <FlexView vAlignContent='center' hAlignContent='center'><input
               type="password"
               placeholder="Password"
               value={signUpPassword}
