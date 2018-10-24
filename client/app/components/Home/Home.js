@@ -238,7 +238,7 @@ class Home extends Component {
 
          </FlexView>
          <FlexView hAlignContent='center'>
-         <FlexView>Welcome to johnwritescode!</FlexView>
+         <FlexView>&nbsp;&nbsp;Welcome to johnwritescode!&nbsp;&nbsp;</FlexView>
        </FlexView>
           <FlexView column='true' hAlignContent='center' style={{ color: '#FFFFFF', backgroundColor: '#1A91EB' }}>
             {
