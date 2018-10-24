@@ -225,7 +225,7 @@ class Home extends Component {
               placeholder="Email"
               value={signInEmail}
               onChange={this.onTextboxChangeSignInEmail}
-            />&nbsp;</FlexView>
+            /></FlexView>
 
             <FlexView><input
               type="password"
@@ -252,7 +252,7 @@ class Home extends Component {
               placeholder="Email"
               value={signUpEmail}
               onChange={this.onTextboxChangeSignUpEmail}
-            />&nbsp;</FlexView>
+            /></FlexView>
             <FlexView><input
               type="password"
               placeholder="Password"
