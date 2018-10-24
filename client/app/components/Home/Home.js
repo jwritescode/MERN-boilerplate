@@ -219,7 +219,7 @@ class Home extends Component {
               ) : (null)
             }
 
-            <FlexView vAlignContent='center' hAlignContent='left'>Have an Account? </FlexView><br />
+            <FlexView vAlignContent='center' hAlignContent='left'>Have an Account?&nbsp;</FlexView><br />
           <FlexView vAlignContent='center' hAlignContent='center'><input
               type="email"
               placeholder="Email"
