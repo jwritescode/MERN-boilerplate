@@ -226,14 +226,14 @@ class Home extends Component {
               value={signInEmail}
               onChange={this.onTextboxChangeSignInEmail}
             /></FlexView>
-            <br />
+
             <FlexView vAlignContent='center' hAlignContent='center'><input
               type="password"
               placeholder="Password"
               value={signInPassword}
               onChange={this.onTextboxChangeSignInPassword}
             /></FlexView>
-            <br />
+            
             <FlexView vAlignContent='center' hAlignContent='center'><button onClick={this.onSignIn}>Sign In</button></FlexView>
          </div>
           <br />
