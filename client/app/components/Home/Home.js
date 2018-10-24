@@ -212,14 +212,14 @@ class Home extends Component {
     if (!token) {
       return (
         <FlexView column='true' hAlignContent='center' vAlignContent='center'>
-          <FlexView column='true' vAlignContent='left'>
+          <FlexView column='true' hAlignContent='left'>
             {
               (signInError) ? (
                 <p>{signInError}</p>
               ) : (null)
             }
 
-            <FlexView>Log In&nbsp;</FlexView><br />
+            <FlexView>Log In</FlexView><br />
           <FlexView><input
               type="email"
               placeholder="Email"
@@ -238,13 +238,13 @@ class Home extends Component {
             <br />
          </FlexView>
 
-          <FlexView column='true' vAlignContent='right'>
+          <FlexView column='true' hAlignContent='right'>
             {
               (signUpError) ? (
                 <p>{signUpError}</p>
               ) : (null)
             }
-            <FlexView>Register&nbsp;</FlexView><br />
+            <FlexView>Register</FlexView><br />
             <FlexView><input
               type="email"
               placeholder="Email"
