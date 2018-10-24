@@ -238,8 +238,8 @@ class Home extends Component {
 
          </FlexView>
          <FlexView hAlignContent='center'>
-  <FlexView hAlignContent='center' basis={50} style={{ height: 50 }}/>Welcome to johnwritescode!
-</FlexView>
+         <FlexView basis={50} height={50} /> Welcom to johnwritescode!
+       </FlexView>
           <FlexView column='true' hAlignContent='center' style={{ color: '#FFFFFF', backgroundColor: '#1A91EB' }}>
             {
               (signUpError) ? (
