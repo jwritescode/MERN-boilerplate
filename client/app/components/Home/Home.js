@@ -237,7 +237,7 @@ class Home extends Component {
             <FlexView><button onClick={this.onSignIn}>Sign In</button></FlexView>
 
          </FlexView>
-         <FlexView>
+         <FlexView hAlignContent='center'>
   <FlexView hAlignContent='center' basis={50} style={{ height: 50 }}/>Welcome to johnwritescode!
 </FlexView>
           <FlexView column='true' hAlignContent='center' style={{ color: '#FFFFFF', backgroundColor: '#1A91EB' }}>
