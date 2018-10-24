@@ -237,8 +237,8 @@ class Home extends Component {
             <FlexView><button onClick={this.onSignIn}>Sign In</button></FlexView><br />
             <br />
          </FlexView>
-
-          <FlexView column='true' hAlignContent='right'>
+<FlexView>
+          <FlexView column='true' hAlignContent='left'>
             {
               (signUpError) ? (
                 <p>{signUpError}</p>
@@ -259,7 +259,7 @@ class Home extends Component {
             />&nbsp;</FlexView><br />
             <FlexView><button onClick={this.onSignUp}>Sign Up</button></FlexView>
           </FlexView>
-
+</FlexView>
         </FlexView>
       );
     }
