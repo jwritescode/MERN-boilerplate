@@ -21,7 +21,7 @@ this.onTextboxChangeSignInPassword = this.onTextboxChangeSignInPassword.bind(thi
 this.onTextboxChangeSignUpEmail = this.onTextboxChangeSignUpEmail.bind(this);
 this.onTextboxChangeSignUpPassword = this.onTextboxChangeSignUpPassword.bind(this);
 this.onSignUp = this.onSignUp.bind(this);
-this.onSignIn = this.onSignIn.bind(this);
+//this.onSignIn = this.onSignIn.bind(this);
 }
 
 //Functions for the sign up/sign in form
