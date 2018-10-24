@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header>
-  <Link to="/"><FlexView vAlignContent='center' hAlignContent='center'>Home</Flexview></Link>
+  <FlexView vAlignContent='center' hAlignContent='center'><Link to="/">Home</Link></FlexView>
 
     <hr />
   </header>
