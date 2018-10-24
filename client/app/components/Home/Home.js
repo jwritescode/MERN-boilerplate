@@ -238,7 +238,7 @@ class Home extends Component {
 
          </FlexView>
          <FlexView>
-  <FlexView basis={50} style={{ height: 50 }} /> // width 50px, height 50px
+  <FlexView basis={50} style={{ height: 50 }} />Welcome to johnwritescode!
 </FlexView>
           <FlexView column='true' hAlignContent='left'>
             {
