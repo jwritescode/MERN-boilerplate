@@ -212,7 +212,7 @@ class Home extends Component {
     if (!token) {
       return (
         <FlexView>
-          <FlexView column="true">
+          <FlexView column='true' hAlignContent='center'>
             {
               (signInError) ? (
                 <p>{signInError}</p>
@@ -238,7 +238,7 @@ class Home extends Component {
             <br />
          </FlexView>
 
-          <FlexView column="true">
+          <FlexView column='true' hAlignContent='center'>
             {
               (signUpError) ? (
                 <p>{signUpError}</p>
