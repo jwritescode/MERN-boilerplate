@@ -219,22 +219,22 @@ class Home extends Component {
               ) : (null)
             }
 
-            <FlexView vAlignContent='center' hAlignContent='center'>Sign In</FlexView><br />
-          <FlexView vAlignContent='center' hAlignContent='center'><input
+            <FlexView vAlignContent='center' hAlignContent='left'>Sign In</FlexView><br />
+          <FlexView vAlignContent='center' hAlignContent='left'><input
               type="email"
               placeholder="Email"
               value={signInEmail}
               onChange={this.onTextboxChangeSignInEmail}
             /></FlexView>
 
-            <FlexView vAlignContent='center' hAlignContent='center'><input
+            <FlexView vAlignContent='center' hAlignContent='left'><input
               type="password"
               placeholder="Password"
               value={signInPassword}
               onChange={this.onTextboxChangeSignInPassword}
             /></FlexView>
 <br />
-            <FlexView vAlignContent='center' hAlignContent='center'><button onClick={this.onSignIn}>Sign In</button></FlexView><br />
+            <FlexView vAlignContent='center' hAlignContent='left'><button onClick={this.onSignIn}>Sign In</button></FlexView><br />
             <br />
          </FlexView>
 
@@ -244,20 +244,20 @@ class Home extends Component {
                 <p>{signUpError}</p>
               ) : (null)
             }
-            <FlexView vAlignContent='center' hAlignContent='center'>Sign Up</FlexView><br />
-            <FlexView vAlignContent='center' hAlignContent='center'><input
+            <FlexView vAlignContent='center' hAlignContent='right'>Sign Up</FlexView><br />
+            <FlexView vAlignContent='center' hAlignContent='right'><input
               type="email"
               placeholder="Email"
               value={signUpEmail}
               onChange={this.onTextboxChangeSignUpEmail}
             /></FlexView>
-            <FlexView vAlignContent='center' hAlignContent='center'><input
+            <FlexView vAlignContent='center' hAlignContent='right'><input
               type="password"
               placeholder="Password"
               value={signUpPassword}
               onChange={this.onTextboxChangeSignUpPassword}
             /></FlexView><br />
-            <FlexView vAlignContent='center' hAlignContent='center'><button onClick={this.onSignUp}>Sign Up</button></FlexView>
+            <FlexView vAlignContent='center' hAlignContent='right'><button onClick={this.onSignUp}>Sign Up</button></FlexView>
           </FlexView>
 
         </FlexView>
