@@ -235,9 +235,9 @@ class Home extends Component {
             /></FlexView>
             <br />
             <FlexView><button onClick={this.onSignIn}>Sign In</button></FlexView>
-        //  </div>
+        </FlexView> </div>
           <br />
-          <br /></FlexView>
+          <br />
           <div>
             {
               (signUpError) ? (
