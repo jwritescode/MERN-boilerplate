@@ -171,5 +171,6 @@ render() {
     </div>
   );
 }
+}
 
 export default Home;
