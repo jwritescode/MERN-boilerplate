@@ -234,7 +234,7 @@ class Home extends Component {
               onChange={this.onTextboxChangeSignInPassword}
             /></FlexView>
 <br />
-            <FlexView><button onClick={this.onSignIn}>Sign In</button></FlexView>&nbsp;
+            <FlexView><button onClick={this.onSignIn}>Sign In</button></FlexView>
 
          </FlexView>&nbsp;
           <FlexView column='true' hAlignContent='left'>
