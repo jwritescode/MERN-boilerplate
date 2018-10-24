@@ -218,7 +218,7 @@ class Home extends Component {
                 <p>{signInError}</p>
               ) : (null)
             }
-            <FlexView vAlignContent='center' hAlignContent='center'>Sign In</FlexView>
+            <FlexView vAlignContent='center' hAlignContent='center'>Sign In
             <input
               type="email"
               placeholder="Email"
@@ -236,7 +236,7 @@ class Home extends Component {
             <button onClick={this.onSignIn}>Sign In</button>
           </div>
           <br />
-          <br />
+          <br /></FlexView>
           <div>
             {
               (signUpError) ? (
