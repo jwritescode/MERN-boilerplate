@@ -212,7 +212,7 @@ class Home extends Component {
     if (!token) {
       return (
         <FlexView hAlignContent='center' vAlignContent='center'>
-          <FlexView column='true' hAlignContent='left'>
+          <FlexView column='true' hAlignContent='left'  style={{ backgroundColor: '#D1236D' }}>
             {
               (signInError) ? (
                 <p>{signInError}</p>
@@ -240,7 +240,7 @@ class Home extends Component {
          <FlexView>
   <FlexView hAlignContent='center' basis={50} style={{ height: 50 }}/>Welcome to johnwritescode!
 </FlexView>
-          <FlexView column='true' hAlignContent='left'>
+          <FlexView column='true' hAlignContent='left' style={{ backgroundColor: '#1A91EB' }}>
             {
               (signUpError) ? (
                 <p>{signUpError}</p>
