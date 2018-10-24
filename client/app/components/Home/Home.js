@@ -211,7 +211,7 @@ class Home extends Component {
 
     if (!token) {
       return (
-        <FlexView column='true' hAlignContent='center' vAlignContent='center'>
+        <FlexView hAlignContent='center' vAlignContent='center'>
           <FlexView column='true' hAlignContent='left'>
             {
               (signInError) ? (
