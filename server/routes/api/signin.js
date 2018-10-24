@@ -56,12 +56,13 @@ User.find({
         success: false,
         message: 'Failure: Server is confused.'
       });
+    }
       return res.send({
         success: true,
-        message: 'Succes! You have registered an account!'
+        message: 'Success! You have registered an account!'
       });
   });
 });
 
 }); // end of the sign up endpoint
-}
+};
