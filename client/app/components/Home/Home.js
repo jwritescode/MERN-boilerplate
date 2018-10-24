@@ -19,7 +19,7 @@ this.state = {
 this.onTextboxChangeSignInEmail = this.onTextboxChangeSignInEmail.bind(this);
 this.onTextboxChangeSignInPassword = this.onTextboxChangeSignInPassword.bind(this);
 this.onTextboxChangeSignUpEmail = this.onTextboxChangeSignUpEmail.bind(this);
-this.onTextboxChangeSignInPassword = this.onTextboxChangeSignInPassword.bind(this);
+this.onTextboxChangeSignUpPassword = this.onTextboxChangeSignUpPassword.bind(this);
 this.onSignUp = this.onSignUp.bind(this);
 }
 
