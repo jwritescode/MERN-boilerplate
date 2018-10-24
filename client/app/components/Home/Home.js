@@ -219,7 +219,7 @@ class Home extends Component {
               ) : (null)
             }
 
-            <FlexView>Log In</FlexView><br />
+            <FlexView hAlignContent='center'>Log In</FlexView><br />
           <FlexView><input
               type="email"
               placeholder="Email"
@@ -234,7 +234,7 @@ class Home extends Component {
               onChange={this.onTextboxChangeSignInPassword}
             /></FlexView>
 <br />
-            <FlexView><button onClick={this.onSignIn}>Sign In</button></FlexView>
+            <FlexView hAlignContent='center'><button onClick={this.onSignIn}>Sign In</button></FlexView>
 
          </FlexView>
          <FlexView>
@@ -246,7 +246,7 @@ class Home extends Component {
                 <p>{signUpError}</p>
               ) : (null)
             }
-            <FlexView>Register</FlexView><br />
+            <FlexView hAlignContent='center'>Register</FlexView><br />
             <FlexView><input
               type="email"
               placeholder="Email"
@@ -259,7 +259,7 @@ class Home extends Component {
               value={signUpPassword}
               onChange={this.onTextboxChangeSignUpPassword}
             /></FlexView><br />
-            <FlexView><button onClick={this.onSignUp}>Sign Up</button></FlexView>
+            <FlexView hAlignContent='center'><button onClick={this.onSignUp}>Sign Up</button></FlexView>
           </FlexView>
 </FlexView>
 
