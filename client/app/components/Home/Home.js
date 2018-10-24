@@ -236,9 +236,9 @@ class Home extends Component {
 <br />
             <FlexView vAlignContent='center' hAlignContent='center'><button onClick={this.onSignIn}>Sign In</button></FlexView>
          </FlexView>
+
+          <FlexView vAlignContent='center' hAlignContent='center'><br />
           <br />
-          <br />
-          <FlexView vAlignContent='center' hAlignContent='center'>
             {
               (signUpError) ? (
                 <p>{signUpError}</p>
