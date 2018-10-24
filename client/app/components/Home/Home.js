@@ -218,22 +218,23 @@ class Home extends Component {
                 <p>{signInError}</p>
               ) : (null)
             }
-            <FlexView vAlignContent='center' hAlignContent='center'>Sign In
-            <input
+            <FlexView vAlignContent='center' hAlignContent='center'>
+            <FlexView>Sign In</FlexView>
+            <FlexView><input
               type="email"
               placeholder="Email"
               value={signInEmail}
               onChange={this.onTextboxChangeSignInEmail}
-            />
+            /></FlexView>
             <br />
-            <input
+            <FlexView><input
               type="password"
               placeholder="Password"
               value={signInPassword}
               onChange={this.onTextboxChangeSignInPassword}
-            />
+            /></FlexView>
             <br />
-            <button onClick={this.onSignIn}>Sign In</button>
+            <FlexView><button onClick={this.onSignIn}>Sign In</button></FlexView>
           </div>
           <br />
           <br /></FlexView>
