@@ -1,4 +1,5 @@
 const Character = require('../../models/Character');
+const User = require('../../models/User');
 
 module.exports = (app) => {
   app.post('/api/account/characters/create', (req, res, next) => {
@@ -6,6 +7,7 @@ module.exports = (app) => {
     const { chName } = body;
     let { chRace } = body;
     let { chClass } = body;
+    let { chUserID } = body;
 
   if (!chName) {
     return res.send({
@@ -25,6 +27,34 @@ module.exports = (app) => {
       message: 'Error: character class cannot be blank.'
     });
   }
+  if (!chUserID) {
+    return res.send({
+      success: false,
+      message: 'Error: until I figure out how, you must manually input your user name.'
+    });
+
+  }
+
+  
+
+  User.find({
+    chUserID: chUserID
+  }, (err, validUser) => {
+    if (err) {
+      return res.send({
+        success: false,
+        message: 'Error: server error.'
+      });
+    }
+      else if (validUser.length != 1) {
+        return res.send({
+          success: false,
+          message: 'Not a valid user.'
+        });
+      }
+    
+  
+  })
 
 
   // verify its not a used name
@@ -49,6 +79,7 @@ module.exports = (app) => {
     newCharacter.chName = chName;
     newCharacter.chRace = chRace;
     newCharacter.chClass = chClass;
+    newCharacter.chUserID = chUserID;
     newCharacter.save((err, user) => {
       if (err) {
         return res.send({

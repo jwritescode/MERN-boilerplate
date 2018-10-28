@@ -24,6 +24,7 @@ class Home extends Component {
       chRaceCreate: '',
       chClassCreate: '',
       chCreateError: '',
+      chUserID: '',
     };
 
     this.onTextboxChangeSignInEmail = this.onTextboxChangeSignInEmail.bind(this);
@@ -38,6 +39,7 @@ class Home extends Component {
     this.onTextboxChangeCharacterName = this.onTextboxChangeCharacterName.bind(this);
     this.onTextboxChangeCharacterRace = this.onTextboxChangeCharacterRace.bind(this);
     this.onTextboxChangeCharacterClass = this.onTextboxChangeCharacterClass.bind(this);
+    this.onTextboxChangeCharacterUserID = this.onTextboxChangeCharacterUserID.bind(this);
 
     this.onCharacterCreate = this.onCharacterCreate.bind(this);
   }
@@ -105,6 +107,11 @@ class Home extends Component {
   onTextboxChangeCharacterClass(event) {
     this.setState({
       chClassCreate: event.target.value,
+    });
+  }
+  onTextboxChangeCharacterUserID(event) {
+    this.setState({
+      chUserID: event.target.value,
     });
   }
 
@@ -227,6 +234,7 @@ class Home extends Component {
       chNameCreate,
       chRaceCreate,
       chClassCreate,
+      chUserID,
     } = this.state;
 
     this.setState({
@@ -243,6 +251,7 @@ class Home extends Component {
         chName: chNameCreate,
         chRace: chRaceCreate,
         chClass: chClassCreate,
+        chUserID: chUserID,
       }),
     }).then(res => res.json())
       .then(json => {
@@ -254,6 +263,7 @@ class Home extends Component {
             chNameCreate: '',
             chRaceCreate: '',
             chClassCreate: '',
+            chUserID: '',
           });
         } else {
           this.setState({
@@ -278,6 +288,7 @@ class Home extends Component {
       chRaceCreate,
       chClassCreate,
       chCreateError,
+      chUserID,
 
     } = this.state;
 
@@ -372,6 +383,13 @@ class Home extends Component {
               placeholder="Character Class"
               value={chClassCreate}
               onChange={this.onTextboxChangeCharacterClass}
+            />
+            <br />
+            <input
+              type="chUserID"
+              placeholder="User Name"
+              value={chUserID}
+              onChange={this.onTextboxChangeCharacterUserID}
             />
             <br />
             <button onClick={this.onCharacterCreate}>Create</button>

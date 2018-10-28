@@ -20,6 +20,10 @@ const CharacterSchema= new mongoose.Schema({
   chCreationDate: {
     type: Date,
     default: Date.now()
+  },
+  chUserID: {
+    type: String,
+    default: ''
   }
 });
 
