@@ -20,6 +20,10 @@ class Home extends Component {
       signInPassword: '',
       signUpEmail: '',
       signUpPassword: '',
+      chNameCreate: '',
+      chRaceCreate: '',
+      chClassCreate: '',
+      chCreateError: '',
     };
 
     this.onTextboxChangeSignInEmail = this.onTextboxChangeSignInEmail.bind(this);
@@ -30,6 +34,12 @@ class Home extends Component {
     this.onSignIn = this.onSignIn.bind(this);
     this.onSignUp = this.onSignUp.bind(this);
     this.logout = this.logout.bind(this);
+
+    this.onTextboxChangeCharacterName = this.onTextboxChangeCharacterName.bind(this);
+    this.onTextboxChangeCharacterRace = this.onTextboxChangeCharacterRace.bind(this);
+    this.onTextboxChangeCharacterClass = this.onTextboxChangeCharacterClass.bind(this);
+
+    this.onCharacterCreate = this.onCharacterCreate.bind(this);
   }
 
   componentDidMount() {
@@ -79,6 +89,22 @@ class Home extends Component {
   onTextboxChangeSignUpPassword(event) {
     this.setState({
       signUpPassword: event.target.value,
+    });
+  }
+
+  onTextboxChangeCharacterName(event) {
+    this.setState({
+      chNameCreate: event.target.value,
+    });
+  }
+  onTextboxChangeCharacterRace(event) {
+    this.setState({
+      chRaceCreate: event.target.value,
+    });
+  }
+  onTextboxChangeCharacterClass(event) {
+    this.setState({
+      chClassCreate: event.target.value,
     });
   }
 
@@ -193,6 +219,51 @@ class Home extends Component {
     }
   }
 
+  //Character chCreation
+
+  onCharacterCreate() {
+    // Grab state
+    const {
+      chNameCreate,
+      chRaceCreate,
+      chClassCreate,
+    } = this.state;
+
+    this.setState({
+      isLoading: true,
+    });
+
+    // Post request to backend
+    fetch('/api/account/characters/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        chName: chNameCreate,
+        chRace: chRaceCreate,
+        chClass: chClassCreate,
+      }),
+    }).then(res => res.json())
+      .then(json => {
+        console.log('json', json);
+        if (json.success) {
+          this.setState({
+            chCreateError: json.message,
+            isLoading: false,
+            chNameCreate: '',
+            chRaceCreate: '',
+            chClassCreate: '',
+          });
+        } else {
+          this.setState({
+            chCreateError: json.message,
+            isLoading: false,
+          });
+        }
+      });
+}
+
   render() {
     const {
       isLoading,
@@ -203,6 +274,11 @@ class Home extends Component {
       signUpEmail,
       signUpPassword,
       signUpError,
+      chNameCreate,
+      chRaceCreate,
+      chClassCreate,
+      chCreateError,
+
     } = this.state;
 
     if (isLoading) {
@@ -270,7 +346,37 @@ class Home extends Component {
       <div>
         <p>Account</p>
         <button onClick={this.logout}>Logout</button>
-      </div>
+
+            {
+              (chCreateError) ? (
+                <p>{chCreateError}</p>
+              ) : (null)
+            }
+            <p>Create Character</p>
+            <input
+              type="chName"
+              placeholder="Character Name"
+              value={chNameCreate}
+              onChange={this.onTextboxChangeCharacterName}
+            />
+            <br />
+            <input
+              type="chRace"
+              placeholder="Character Race"
+              value={chRaceCreate}
+              onChange={this.onTextboxChangeCharacterRace}
+            />
+            <br />
+            <input
+              type="chClass"
+              placeholder="Character Class"
+              value={chClassCreate}
+              onChange={this.onTextboxChangeCharacterClass}
+            />
+            <br />
+            <button onClick={this.onCharacterCreate}>Create</button>
+          </div>
+
     );
   }
 }
