@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
-import FlexView from 'react-flexview';
+// import FlexView from 'react-flexview';
+import '../../styles/styles.scss';
 
 import {
   getFromStorage,
@@ -39,7 +40,7 @@ class Home extends Component {
     this.onTextboxChangeCharacterName = this.onTextboxChangeCharacterName.bind(this);
     this.onTextboxChangeCharacterRace = this.onTextboxChangeCharacterRace.bind(this);
     this.onTextboxChangeCharacterClass = this.onTextboxChangeCharacterClass.bind(this);
-    this.onTextboxChangeCharacterUserID = this.onTextboxChangeCharacterUserID.bind(this);
+
 
     this.onCharacterCreate = this.onCharacterCreate.bind(this);
   }
@@ -109,11 +110,7 @@ class Home extends Component {
       chClassCreate: event.target.value,
     });
   }
-  onTextboxChangeCharacterUserID(event) {
-    this.setState({
-      chUserID: event.target.value,
-    });
-  }
+
 
   onSignUp() {
     // Grab state
@@ -234,9 +231,10 @@ class Home extends Component {
       chNameCreate,
       chRaceCreate,
       chClassCreate,
-      chUserID,
     } = this.state;
-
+    const chUserID = function (req, res, next) {
+      req.UserSession.userID;
+    }
     this.setState({
       isLoading: true,
     });
@@ -288,17 +286,71 @@ class Home extends Component {
       chRaceCreate,
       chClassCreate,
       chCreateError,
-      chUserID,
+      
 
     } = this.state;
-
+    const chUserID = function (req, res, next) {
+      req.UserSession.userID;
+    }
     if (isLoading) {
       return (<div><p>Loading...</p></div>);
     }
 
     if (!token) {
       return (
-        <FlexView hAlignContent='center' vAlignContent='center'>
+        <div class="signin-signup-page-container">
+          <div class="signin-container">
+        {
+          (signInError) ? (
+            <p class="signin-error">{signInError}</p>
+          ) : (null)
+        }
+        <p class="signin-header-text">Sign In</p>
+        <input class="signin-email-input"
+              type="email"
+              placeholder="Email"
+              value={signInEmail}
+              onChange={this.onTextboxChangeSignInEmail}
+        />
+        <br />
+        <input class="signin-password-input"
+              type="password"
+              placeholder="Password"
+              value={signInPassword}
+              onChange={this.onTextboxChangeSignInPassword}
+        />
+            <br />
+            <button class="signin-button" onClick={this.onSignIn}>Sign In</button>
+          </div>
+          <br />
+          <br />
+          <div class="signup-container">
+          {
+              (signUpError) ? (
+                <p class="signup-error">{signUpError}</p>
+              ) : (null)
+            }
+            <p class="signup-header-text">Sign Up</p>
+            <input class="signup-email-input"
+              type="email"
+              placeholder="Email"
+              value={signUpEmail}
+              onChange={this.onTextboxChangeSignUpEmail}
+            /><br />
+            <input class="signup-password-input"
+              type="password"
+              placeholder="Password"
+              value={signUpPassword}
+              onChange={this.onTextboxChangeSignUpPassword}
+            /><br />
+            <button class="signup-button" onClick={this.onSignUp}>Sign Up</button>
+          </div>
+       </div>
+
+
+
+
+   /*     <FlexView hAlignContent='center' vAlignContent='center'>
           <FlexView column='true' hAlignContent='center'  style={{ color: '#FFFFFF', backgroundColor: '#D1236D' }}>
             {
               (signInError) ? (
@@ -348,51 +400,50 @@ class Home extends Component {
             /></FlexView><br />
             <FlexView><button onClick={this.onSignUp}>Sign Up</button></FlexView>
           </FlexView>
-</FlexView>
+</FlexView> */
+
+
+
 
       );
     }
 
     return (
-      <div>
-        <p>Account</p>
-        <button onClick={this.logout}>Logout</button>
-
+      <div class="account-page-container">
+        <div class="account-page-nav-container">
+        <p class="account-heading">Account</p>
+        <button class="logout-button" onClick={this.logout}>Logout</button>
+          <div class="character-create-container">
             {
               (chCreateError) ? (
-                <p>{chCreateError}</p>
+                <p class="character-create-error">{chCreateError}</p>
               ) : (null)
             }
-            <p>Create Character</p>
-            <input
+            <p class="character-create-header-text">Create Character</p>
+            <input class="character-create-name-input"
               type="chName"
               placeholder="Character Name"
               value={chNameCreate}
               onChange={this.onTextboxChangeCharacterName}
             />
             <br />
-            <input
+            <input class="character-create-race-input"
               type="chRace"
               placeholder="Character Race"
               value={chRaceCreate}
               onChange={this.onTextboxChangeCharacterRace}
             />
             <br />
-            <input
+            <input class="character-create-class-input"
               type="chClass"
               placeholder="Character Class"
               value={chClassCreate}
               onChange={this.onTextboxChangeCharacterClass}
             />
             <br />
-            <input
-              type="chUserID"
-              placeholder="User Name"
-              value={chUserID}
-              onChange={this.onTextboxChangeCharacterUserID}
-            />
-            <br />
-            <button onClick={this.onCharacterCreate}>Create</button>
+            <button class="character-create-button" onClick={this.onCharacterCreate}>Create</button>
+          </div>
+          </div>
           </div>
 
     );
