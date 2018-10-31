@@ -413,6 +413,7 @@ class Home extends Component {
         <div class="account-page-nav-container">
         <p class="account-heading">Account</p>
         <button class="logout-button" onClick={this.logout}>Logout</button>
+        </div>
           <div class="character-create-container">
             {
               (chCreateError) ? (
@@ -444,7 +445,7 @@ class Home extends Component {
             <button class="character-create-button" onClick={this.onCharacterCreate}>Create</button>
           </div>
           </div>
-          </div>
+          
 
     );
   }
