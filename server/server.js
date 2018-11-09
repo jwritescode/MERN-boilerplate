@@ -10,9 +10,11 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('../config/config');
 const webpackConfig = require('../webpack.config');
 
+const router = express.Router(); 
+
 const isDev = process.env.NODE_ENV !== 'production';
 const port  = process.env.PORT || 8080;
-
+const Character = require('./models/Character');
 
 // Configuration
 // ================================================================================================
@@ -21,9 +23,18 @@ const port  = process.env.PORT || 8080;
 mongoose.connect(isDev ? config.db_dev : config.db);
 mongoose.Promise = global.Promise;
 
+//const indexRouter = require('./routes/index');
+//const usersRouter = require('./routes/users');
+
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+//app.use(function(req,res,next){
+//  req.db = db;
+//  next();
+//});
+//app.use('/', indexRouter);
+//app.use('/users', usersRouter);
 
 // API routes
 require('./routes')(app);
@@ -57,6 +68,30 @@ if (isDev) {
     res.end();
   });
 }
+
+router.route('/characters')
+
+    // create a bear (accessed at POST http://localhost:8080/api/bears)
+    .post(function(req, res) {
+
+        
+
+    })
+
+    // get all the bears (accessed at GET http://localhost:8080/api/bears)
+    .get(function(req, res) {
+        Character.find(function(err, characters) {
+            if (err)
+                res.send(err);
+
+            res.json(characters);
+        });
+    });
+
+// REGISTER OUR ROUTES -------------------------------
+// all of our routes will be prefixed with /api
+app.use('/api', router);
+
 
 app.listen(port, '0.0.0.0', (err) => {
   if (err) {

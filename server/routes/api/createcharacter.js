@@ -8,7 +8,12 @@ module.exports = (app) => {
     const { chName } = body;
     let { chRace } = body;
     let { chClass } = body;
-    let { chUserID } = function (req, res, next) {req.UserSession.userID};
+    let { chUserID } = function (req, res) {
+      Product.findById(req.params.id, function (err, product) {
+          if (err) return next(err);
+          res.send(product);
+      })
+  };
 
   if (!chName) {
     return res.send({
@@ -64,6 +69,12 @@ module.exports = (app) => {
         message: 'Character Created!'
       });
     });
+    exports.user_details = function (req, res) {
+      Character.findById(req.params.id, function (err, character) {
+        if (err) return next(err);
+        res.send(character);
+     })
+   };
   });
 });
 }
